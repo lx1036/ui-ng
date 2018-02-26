@@ -8,7 +8,12 @@
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
-    <app-checkbox label="Checkbox" value="lx-checkbox" checked="'false'"></app-checkbox>
+    <app-checkbox label="Checkbox" value="lx-checkbox"></app-checkbox>
   </li>
 </ul>
+<exe-counter></exe-counter>
 
+<form #form="ngForm">
+  <exe-counter ngModel name="counter"></exe-counter>
+</form>
+<pre>{{ form.value | json }}</pre>
