@@ -1,5 +1,5 @@
 import {Component, ElementRef, forwardRef, Input, OnInit, ViewChild} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
@@ -145,7 +145,7 @@ export class CounterComponent implements ControlValueAccessor {
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => PersonComponent),
+      useExisting: PersonComponent,
       multi: true
     }
   ]
@@ -164,8 +164,8 @@ export class PersonComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.onChange = () => {
-      console.log('Propagating change');
-      fn(this.person);
+      console.log(this.person);
+      // fn(this.person);
     }
   }
 
@@ -227,4 +227,30 @@ export class Person {
   name: string;
   age: number;
   gender: 'male' | 'female';
+}
+
+// Example FormControl
+/**
+ * In other words, this directive ensures that any values written to the {@link FormControl}
+ * instance programmatically will be written to the DOM element (model -> view). Conversely,
+ * any values written to the DOM element through user input will be reflected in the
+ * {@link FormControl} instance (view -> model).
+ */
+@Component({
+  selector: 'example-form-control',
+  template: `
+    <input [formControl]="control">
+
+    <p>Value: {{ control.value }}</p>
+    <p>Validation status: {{ control.status }}</p>
+
+    <button (click)="setValue()">Set value</button>
+  `
+})
+export class SimpleFormControl {
+  control: FormControl = new FormControl('value', Validators.minLength(6));
+
+  setValue() {
+    this.control.setValue('new value');
+  }
 }
