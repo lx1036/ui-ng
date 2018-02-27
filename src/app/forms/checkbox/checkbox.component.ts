@@ -1,11 +1,11 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, forwardRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
   template: `
     <label>
-      <input type="checkbox" [value]="value" [checked]="checked" (change)="change($event, label)"/>
+      <input #checkbox type="checkbox" [value]="value" [checked]="checked" (change)="change(checkbox.checked, label)"/>
       <div class="ui-checkbox-title">{{label}}</div>
     </label>
   `,
@@ -19,7 +19,7 @@ export class CheckboxComponent implements ControlValueAccessor {
 
   _checked: boolean;
 
-  @Input set checked(checked: boolean) {
+  @Input('checked') set checked(checked: boolean) {
     console.log(checked);
     this._checked = checked;
 
@@ -46,13 +46,14 @@ export class CheckboxComponent implements ControlValueAccessor {
     return this._checked;
   }
 
-  constructor() { }
+  constructor() {
+  }
 
-  change($event, label) {
-    console.log($event);
+  change(checked, label) {
+    console.log(checked);
 
     if (!this.disabled) {
-      this.checked = $event.target.checked;
+      this.checked = checked;
 
       if (!this.binary) {
 
@@ -93,7 +94,7 @@ export const CONTROL_VALUE_ACCESSOR = {
   `,
   providers: [CONTROL_VALUE_ACCESSOR]
 })
-export class CounterComponent implements ControlValueAccessor{
+export class CounterComponent implements ControlValueAccessor {
   propagateChange = (value) => {};
 
 
@@ -124,4 +125,106 @@ export class CounterComponent implements ControlValueAccessor{
     this.count--;
     this.propagateChange(this.count);
   }
+}
+
+// Example(https://plnkr.co/edit/PDaIgVOV0aN6lNh7Nstu?p=preview)
+@Component({
+  selector: 'person',
+  template: `
+    <div style="border: 1px solid black; padding: 1rem; margin: 1rem;" *ngIf="person">
+      <p>Name: <input type="text" [(ngModel)]="person.name" (change)="onChange()"/></p>
+      <p>Age: <input type="text" [(ngModel)]="person.age" (change)="onChange()"/></p>
+      <p>Gender: 
+        <select [(ngModel)]="person.gender" (change)="onChange()">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </p>
+    </div>
+  `,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => PersonComponent),
+      multi: true
+    }
+  ]
+})
+export class PersonComponent implements ControlValueAccessor {
+  person: Person;
+  onChange: any;
+
+  writeValue(value: any): void {
+    console.log('writeValue called with:', value);
+
+    if (value) {
+      this.person = value;
+    }
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = () => {
+      console.log('Propagating change');
+      fn(this.person);
+    }
+  }
+
+  registerOnTouched(fn: any): void {
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+  }
+
+}
+
+@Component({
+  selector: 'person-test',
+  template: `
+    <form #myForm="ngForm">
+      <person
+        [(ngModel)]="people[i]"
+        *ngFor="let person of people; index as i; trackBy: trackByIndex"
+        name="person-{{i}}"
+        (change)="onPersonChange()"></person>
+      <button (click)="addPerson()">Add Person</button>
+    </form>
+    <pre>form: {{form.value | json}}</pre>
+    <pre>friends: {{people | json}}</pre>
+  `
+})
+export class PersonTestComponent {
+  people = [
+    {
+      name: 'lx1',
+      age: 1,
+      gender: 'male',
+    },
+    {
+      name: 'lx2',
+      age: 2,
+      gender: 'female',
+    }
+  ];
+
+  @ViewChild('myForm') form;
+  @ViewChild('input[name="name"]') nameField: ElementRef;
+  name: string;
+
+  trackByIndex(index) {
+    return index;
+  }
+
+  onPersonChange() {
+
+  }
+
+  addPerson() {
+    this.people.push(new Person());
+  }
+}
+
+export class Person {
+  name: string;
+  age: number;
+  gender: 'male' | 'female';
 }
