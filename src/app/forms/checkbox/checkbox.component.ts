@@ -5,22 +5,33 @@ import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '
   selector: 'app-checkbox',
   template: `
     <label>
-      <input #checkbox type="checkbox" [value]="value" [checked]="checked" (change)="change(checkbox.checked, label)"/>
+      <input #checkbox type="checkbox" 
+             [ngClass]="'form-checkbox'" [class]="styleClass"
+             [value]="value" [checked]="checked" 
+             (change)="change(checkbox.checked, label)"/>
       <div class="ui-checkbox-title">{{label}}</div>
     </label>
   `,
-  styleUrls: ['./checkbox.component.css']
+  styleUrls: ['./checkbox.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: CheckboxComponent,
+      multi: true
+    }
+  ]
 })
 export class CheckboxComponent implements ControlValueAccessor {
   @Input() label: string;
   @Input() value: any;
   @Input() disabled: boolean;
   @Input() binary: boolean;
+  @Input() styleClass: string;
 
   _checked: boolean;
+  onModelChange: Function = (value) => {};
 
   @Input('checked') set checked(checked: boolean) {
-    console.log(checked);
     this._checked = checked;
 
     if (checked) {
@@ -29,42 +40,45 @@ export class CheckboxComponent implements ControlValueAccessor {
       this.removeValue();
     }
   }
+  get checked(): boolean {
+    return this._checked;
+  }
 
-  checkedValue: Array<any> = [];
+  checkedValue: any = [];
+
+  constructor() {
+  }
 
   addValue() {
     this.checkedValue = [...this.checkedValue, this.value];
-
-    console.log(this.checkedValue);
   }
 
   removeValue() {
     this.checkedValue = this.checkedValue.filter(value => value !== this.value);
   }
 
-  get checked(): boolean {
-    return this._checked;
-  }
-
-  constructor() {
-  }
-
-  change(checked, label) {
-    console.log(checked);
-
+  change(checked: boolean, label: string) {
     if (!this.disabled) {
       this.checked = checked;
 
       if (!this.binary) {
-
+        this.onModelChange(this.checkedValue);
       }
     }
   }
 
-  writeValue(obj: any): void {
+  writeValue(value: any): void {
+    if (value) {
+      this.checkedValue = value;
+
+      if (!this.binary && !Array.isArray(this.checkedValue)) {
+        this.checkedValue = [value];
+      }
+    }
   }
 
   registerOnChange(fn: any): void {
+    this.onModelChange = fn;
   }
 
   registerOnTouched(fn: any): void {
@@ -97,7 +111,6 @@ export const CONTROL_VALUE_ACCESSOR = {
 export class CounterComponent implements ControlValueAccessor {
   propagateChange = (value) => {};
 
-
   writeValue(value: any): void {
     if (value) {
       this.count = value;
@@ -106,6 +119,7 @@ export class CounterComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
+    console.log(fn);
   }
 
   registerOnTouched(fn: any): void {
@@ -252,5 +266,29 @@ export class SimpleFormControl {
 
   setValue() {
     this.control.setValue('new value');
+  }
+}
+
+
+// Example NgModel Directive
+@Component({
+  selector: 'example-ng-model',
+  template: `
+    <input [(ngModel)]="name" #ctl="ngModel" required>
+    <input [ngModel]="name" required>
+
+    <p>Value: {{ name }}</p>
+    <p>Validation status: {{ ctl.valid }}</p>
+
+    <button (click)="setValue()">Set value</button>
+  `
+})
+export class SimpleNgModel {
+  // control: FormControl = new FormControl('value', Validators.minLength(6));
+  name: string = '';
+
+  setValue() {
+    // this.control.setValue('new value');
+    this.name = 'new value';
   }
 }

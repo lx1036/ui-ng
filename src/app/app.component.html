@@ -8,10 +8,18 @@
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
-    <app-checkbox label="Checkbox" value="lx-checkbox"></app-checkbox>
+    <app-checkbox label="Checkbox" value="lx-checkbox" [(ngModel)]="checkedValue"></app-checkbox>
+    <ul *ngFor="let checked_value of checkedValue">
+      <li>{{checked_value}}</li>
+    </ul>
   </li>
 </ul>
-<exe-counter></exe-counter>
+
+<h3>Counter Component</h3>
+<exe-counter [(ngModel)]="counter"></exe-counter>
+<input type="text" name="counter" [(ngModel)]="counter"/>
+<pre>Counter: {{counter}}</pre>
+
 
 <form #form="ngForm">
   <exe-counter ngModel name="counter"></exe-counter>
@@ -21,3 +29,4 @@
 <person-test></person-test>
 
 <example-form-control></example-form-control>
+<example-ng-model></example-ng-model>

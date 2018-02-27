@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  checked = ['Item1'];
+  checkedValue = ['lx1', 'lx2'];
+  counter: number = 10;
 }
