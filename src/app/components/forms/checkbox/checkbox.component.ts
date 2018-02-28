@@ -1,5 +1,6 @@
-import {Component, ElementRef, forwardRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, forwardRef, Input, NgModule, OnInit, ViewChild} from '@angular/core';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-checkbox',
@@ -97,6 +98,16 @@ export class CheckboxComponent implements ControlValueAccessor {
   }
 }
 
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [CheckboxComponent],
+  exports: [CheckboxComponent],
+})
+export class CheckboxModule {}
+
+
+/////////////////////////*****Test*****//////////////////////////////////////////////
 // Example(https://segmentfault.com/a/1190000009070500#articleHeader19)
 
 export const CONTROL_VALUE_ACCESSOR = {
