@@ -13,6 +13,14 @@
       <li>{{checked_value}}</li>
     </ul>
   </li>
+  <li>
+    <app-checkbox label="beijing" [(ngModel)]="selectedCity" value="beijing"></app-checkbox>
+    <app-checkbox label="shanghai" [(ngModel)]="selectedCity" value="shanghai"></app-checkbox>
+    <app-checkbox label="guangdong" [(ngModel)]="selectedCity" value="guangdong"></app-checkbox>
+    <ul *ngFor="let city of selectedCity">
+      <li>{{city}}</li>
+    </ul>
+  </li>
 </ul>
 
 <h3>Counter Component</h3>

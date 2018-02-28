@@ -10,4 +10,5 @@ export class AppComponent {
 
   checkedValue = ['lx1', 'lx2'];
   counter: number = 10;
+  selectedCity: any = ['beijing'];
 }

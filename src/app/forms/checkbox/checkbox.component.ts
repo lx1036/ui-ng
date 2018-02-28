@@ -4,10 +4,10 @@ import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '
 @Component({
   selector: 'app-checkbox',
   template: `
-    <label>
+    <label [ngClass]="'form-checkbox'" [class]="styleClass">
       <input #checkbox type="checkbox" 
-             [ngClass]="'form-checkbox'" [class]="styleClass"
-             [value]="value" [checked]="checked" 
+             [disabled]="disabled"
+             [value]="value" [checked]="checked" [name]="name"
              (change)="change(checkbox.checked, label)"/>
       <div class="ui-checkbox-title">{{label}}</div>
     </label>
@@ -22,10 +22,11 @@ import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '
   ]
 })
 export class CheckboxComponent implements ControlValueAccessor {
+  @Input() name: string;
   @Input() label: string;
   @Input() value: any;
   @Input() disabled: boolean;
-  @Input() binary: boolean;
+  @Input() binary: boolean = false;
   @Input() styleClass: string;
 
   _checked: boolean;
@@ -50,6 +51,8 @@ export class CheckboxComponent implements ControlValueAccessor {
   }
 
   addValue() {
+    if (this.isChecked()) return;
+
     this.checkedValue = [...this.checkedValue, this.value];
   }
 
@@ -74,6 +77,8 @@ export class CheckboxComponent implements ControlValueAccessor {
       if (!this.binary && !Array.isArray(this.checkedValue)) {
         this.checkedValue = [value];
       }
+
+      this.checked = this.isChecked();
     }
   }
 
@@ -87,6 +92,9 @@ export class CheckboxComponent implements ControlValueAccessor {
   setDisabledState(isDisabled: boolean): void {
   }
 
+  isChecked(): boolean {
+    return this.checkedValue.indexOf(this.value) !== -1; // check value if exists in checkedValue
+  }
 }
 
 // Example(https://segmentfault.com/a/1190000009070500#articleHeader19)
@@ -119,7 +127,6 @@ export class CounterComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
-    console.log(fn);
   }
 
   registerOnTouched(fn: any): void {
@@ -169,8 +176,6 @@ export class PersonComponent implements ControlValueAccessor {
   onChange: any;
 
   writeValue(value: any): void {
-    console.log('writeValue called with:', value);
-
     if (value) {
       this.person = value;
     }
@@ -178,7 +183,6 @@ export class PersonComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.onChange = () => {
-      console.log(this.person);
       // fn(this.person);
     }
   }
