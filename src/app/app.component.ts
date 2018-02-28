@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
-  checkedValue = ['lx1', 'lx2'];
-  counter: number = 10;
-  selectedCity: any = ['beijing'];
 }
