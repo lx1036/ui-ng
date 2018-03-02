@@ -1,171 +1,85 @@
+<h1>Tabs-Group</h1>
 <div class="app-demo-board">
   <div class="app-demo-board">
     <div class="app-card-board">
       <h3 class="app-toolbar">Import</h3>
-      <app-tab-group direction="right" theme="line">
-        <app-tab header="CODE">
-        </app-tab>
-      </app-tab-group>
+      <ui-tab-group direction="right" vertical="true">
+        <ui-tab header="CODE">
+          <ui-code lang="typescript">
+            import &#123;TabGroupModule&#125; from 'uing/uing';
+          </ui-code>
+        </ui-tab>
+      </ui-tab-group>
     </div>
   </div>
+</div>
 
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Default</h3>
-    <app-tab-group direction="right">
-      <app-tab [header]="'Demo'">
-        <app-tab-group>
-          <!--<app-tab *ngFor="let tab of tabs" [header]="tab.title">-->
-          <!--{{tab.content}}-->
-          <!--</app-tab>-->
-          <app-tab header="Tab 1">
-            Tab 1 content
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
 
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Direction</h3>
-    <app-tab-group direction="right">
-      <app-tab [header]="'Demo'">
-        <app-tab-group direction="right">
-          <app-tab header="Tab 1">
-            Tab 1 content
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
+<div class="ui-card-board">
+  <h3 class="ui-toolbar">Default</h3>
+  <ui-tab-group direction="right">
+    <ui-tab [header]="'Demo'">
+      <ui-tab-group>
+        <!--<ui-tab *ngFor="let tab of tabs" [header]="tab.title">-->
+        <!--{{tab.content}}-->
+        <!--</ui-tab>-->
+        <ui-tab header="Tab 1">
+          Tab 1 content
+        </ui-tab>
+        <ui-tab header="Tab 2">
+          Tab 2 content
+        </ui-tab>
+      </ui-tab-group>
+    </ui-tab>
+    <ui-tab header="CODE">
+      <ui-code lang="html">
+        &lt;ui-tab-group&gt;
+        &lt;ui-tab header="Tab 1"&gt;
+        Tab 2 content
+        &lt;/ui-tab&gt;
+        &lt;ui-tab header="Tab 2"&gt;
+        Tab 2 content
+        &lt;/ui-tab&gt;
+        &lt;/ui-tab-group&gt;
+      </ui-code>
+    </ui-tab>
+  </ui-tab-group>
+</div>
 
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Disabled</h3>
-    <app-tab-group direction="right">
-      <app-tab [header]="'Demo'">
-        <app-tab-group direction="right">
-          <app-tab header="Tab 1">
-            Tab 2 content
-          </app-tab>
-          <app-tab header="Tab 2" [disabled]="true">
-            Tab 2 content
-          </app-tab>
-          <app-tab header="Tab 3">
-            Tab 3 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
-
-  <div class="app-card-board">
-    <h3 class="app-toolbar">onChange</h3>
-    <app-tab-group direction="right">
-      <app-tab [header]="'Demo'">
-        <p style="width: 100%;margin-bottom: 10px">
-          当前tab：{{activeState?.activeIndex}}
-        </p>
-        <app-tab-group (onChange)="onTabChange($event)">
-          <app-tab header="Tab 1">
-            Tab 2 content
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-        <h5>Javascript</h5>
-      </app-tab>
-    </app-tab-group>
-  </div>
-
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Direction</h3>
-    <app-tab-group direction="right">
-      <app-tab [header]="'Demo'">
-        <app-tab-group direction="right">
-          <app-tab header="Tab 1" [maxHeight]="200">
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
-
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Direction</h3>
-    <app-tab-group [direction]="'right'">
-      <app-tab [header]="'Demo'">
-        <app-tab-group [vertical]="true">
-          <app-tab header="Tab 1">
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
-
-  <div class="app-card-board">
-    <h3 class="app-toolbar">Template</h3>
-    <app-tab-group [direction]="'right'">
-      <app-tab [header]="'Demo'">
-        <app-tab-group>
-          <app-tab>
-            <ng-template [fTemplate]="'header'">
-              123
-            </ng-template>
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-            FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
-            FreeNG is still very young, the first version was released in May 2017.
-            Current Version： v0.2.3
-            Special statement: Free name Free, FreeNG is completely open source app!
-          </app-tab>
-          <app-tab header="Tab 2">
-            Tab 2 content
-          </app-tab>
-        </app-tab-group>
-      </app-tab>
-      <app-tab header="CODE">
-      </app-tab>
-    </app-tab-group>
-  </div>
+<div class="ui-card-board">
+  <h3 class="ui-toolbar">Template</h3>
+  <ui-tab-group [direction]="'right'">
+    <ui-tab [header]="'Demo'">
+      <ui-tab-group>
+        <ui-tab>
+          <ng-template [fTemplate]="'header'">
+            123
+          </ng-template>
+          uiNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
+          uiNG is still very young, the first version was released in May 2017.
+          Current Version： v0.2.3
+          Special statement: ui name ui, uiNG is completely open source ui!
+          uiNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
+          uiNG is still very young, the first version was released in May 2017.
+          Current Version： v0.2.3
+          Special statement: ui name ui, uiNG is completely open source ui!
+        </ui-tab>
+        <ui-tab header="Tab 2">
+          Tab 2 content
+        </ui-tab>
+      </ui-tab-group>
+    </ui-tab>
+    <ui-tab header="CODE">
+      <ui-code lang="html">
+        &lt;ui-tab-group direction="right"&gt;
+        &lt;ui-tab header="Tab 1"&gt;
+        Tab 2 content
+        &lt;/ui-tab&gt;
+        &lt;ui-tab header="Tab 2"&gt;
+        Tab 2 content
+        &lt;/ui-tab&gt;
+        &lt;/ui-tab-group&gt;
+      </ui-code>
+    </ui-tab>
+  </ui-tab-group>
 </div>

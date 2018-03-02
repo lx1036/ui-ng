@@ -1,14 +1,41 @@
 import {NgModule} from '@angular/core';
-import {TabGroupModule} from '../../../components/layout/tabs/tabs.component';
+import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {CodeModule} from '../../../components/code/code.component';
+import {ShareModule} from '../../../components/common/share';
+import {TabGroupModule} from '../../../components/layout/tabs/tabs.component';
 import {ExampleTabsComponent} from './tabs.component';
 
+@NgModule({
+  imports: [
+    RouterModule.forChild([
+      {
+        path: '',
+        component: ExampleTabsComponent
+      }
+    ]),
+  ],
+  exports: [RouterModule]
+})
+export class ExampleTabRoutingModule {
+  constructor() {
+    console.log(this.constructor.name);
+  }
+}
 
 @NgModule({
   imports: [
     CommonModule,
+    ExampleTabRoutingModule,
+    
     TabGroupModule,
+    CodeModule,
+    ShareModule,
   ],
   declarations: [ExampleTabsComponent]
 })
-export class ExampleTabModule {}
+export class ExampleTabModule {
+  constructor() {
+    console.log(this.constructor.name);
+  }
+}

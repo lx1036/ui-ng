@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.css']
 })
 export class ExampleTabsComponent implements OnInit {
-
   tabs = [];
 
   constructor() {
-
+    console.log(this.constructor.name);
   }
 
   ngOnInit() {

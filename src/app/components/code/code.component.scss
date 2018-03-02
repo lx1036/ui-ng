@@ -1,0 +1,56 @@
+ui-code {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.ui-code {
+  position: relative;
+  code {
+    max-height: 22.5rem;
+    overflow-y: auto;
+  }
+
+  &:hover .code-clone {
+    opacity: 0.9;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &[lang]:after {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    color: rgba(255, 0, 0, 0.5);
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  &[lang="html"]:after {
+    content: "HTML";
+  }
+
+  &[lang="Javascript"]:after {
+    content: "Javascript";
+  }
+
+  &[lang="CSS"]:after {
+    content: "CSS";
+  }
+
+  &[lang="typescript"]:after {
+    content: "TypeScript";
+  }
+}
+
+.code-clone {
+  position: absolute;
+  right: 1rem;
+  top: .2rem;
+  opacity: 0;
+  z-index: 100;
+  border: none;
+  padding: 0 .25rem;
+  border-radius: 3px;
+  transition: opacity .3s;
+}
