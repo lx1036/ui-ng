@@ -5,7 +5,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TemplateDirective} from '../../common/share';
+import {ShareModule, TemplateDirective} from '../../common/share';
 
 @Component({
   selector: 'ui-tab-nav',
@@ -37,13 +37,15 @@ export class TabNavComponent {
 @Component({
   selector: 'ui-tab',
   template: `
-    <div [ngClass]="tabClass" [class.active]="selected" [class.isScroll]="maxHeight" [style.max-height]="maxHeight">
-      <div class="app-tab-wrapper">
+    <div [ngClass]="tabClass"
+         [class.active]="selected"
+         [class.isScroll]="maxHeight"
+         [style.max-height]="maxHeight">
+      <div class="ui-tab-wrapper">
         <ng-content></ng-content>
       </div>
     </div>
-  `,
-  styleUrls: ['./tabs.component.scss']
+  `
 })
 export class TabComponent implements AfterViewInit {
   @Input() header: string;
@@ -79,6 +81,7 @@ export class TabComponent implements AfterViewInit {
   tabClass: any;
   toggleClass() {
     this.tabClass = {
+      'ui-tab': true,
       'active': this._selected,
     };
   }
@@ -91,13 +94,14 @@ export class TabComponent implements AfterViewInit {
 @Component({
   selector: 'ui-tab-group',
   template: `
-    <div class="app-tab-group" [class.app-tab-vertical]="vertical" #group>
+    <div class="ui-tab-group" [class.ui-tab-vertical]="vertical" #group>
       <ui-tab-nav [tabs]="tabs" (tabClick)="tabClick(index)"></ui-tab-nav>
-      <div class="app-tab-box">
+      <div class="ui-tab-box">
         <ng-content></ng-content>
       </div>
     </div>
-  `
+  `,
+  styleUrls: ['./tabs.component.scss']
 })
 export class TabGroupComponent implements AfterContentInit {
   @Input() direction: string;
@@ -138,7 +142,10 @@ export class TabGroupComponent implements AfterContentInit {
 }
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ShareModule,
+  ],
   declarations: [
     TabComponent,
     TabNavComponent,

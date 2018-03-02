@@ -1,0 +1,38 @@
+@import "../../../../assets/mixin";
+
+.ui-tab-group {
+  @include boxShadow;
+
+  .ui-tab-box {
+    position: relative;
+    overflow: hidden;
+
+    /deep/ ui-tab {
+      width: 100%;
+      flex-shrink: 0;
+      border-top: 0;
+      
+      .ui-tab {
+        display: none;
+        .ui-tab-wrapper {
+          width: 100%;
+          background: #fff;
+          padding: 0.75rem;
+        }
+        
+        &.isScroll {
+          overflow: hidden;
+          overflow-y: auto;
+        }
+        
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.ui-tab-vertical {
+
+  }
+}
