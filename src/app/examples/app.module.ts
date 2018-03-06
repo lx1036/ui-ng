@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import {OverlayModule} from '@angular/cdk/overlay';
+import { FilePreviewOverlayComponent } from './cdk/overlay/file-preview-overlay/file-preview-overlay.component';
 
 
 const routes: Routes = [
@@ -25,16 +27,21 @@ export class AppRoutingModule {}
 @NgModule({
   declarations: [
     AppComponent,
+    FilePreviewOverlayComponent,
   ],
   imports: [
     // Angular
     BrowserModule,
     FormsModule,
-    
+    OverlayModule,
+
     // Application
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    FilePreviewOverlayComponent,
+  ],
 })
 export class AppModule { }
