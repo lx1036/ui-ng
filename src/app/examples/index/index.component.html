@@ -1,4 +1,11 @@
-<a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
-<a routerLink="/tabs" routerLinkActive="active">Tabs</a>
-<a routerLink="/code" routerLinkActive="active">Code</a>
-<router-outlet></router-outlet>
+
+<mat-toolbar>
+  <button mat-button><a routerLink="/checkbox" routerLinkActive="active">Checkbox</a></button>
+  <button mat-button><a routerLink="/tabs" routerLinkActive="active">Tabs</a></button>
+  <button mat-button><a routerLink="/code" routerLinkActive="active">Code</a></button>
+  <button mat-button><a routerLink="/custom_form_field_control" routerLinkActive="active">Form Field Control</a></button>
+</mat-toolbar>
+
+<mat-card>
+  <router-outlet></router-outlet>
+</mat-card>

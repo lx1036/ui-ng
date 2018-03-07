@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
@@ -29,8 +30,8 @@ export class AppRoutingModule {}
   imports: [
     // Angular
     BrowserModule,
-    FormsModule,
-    
+    BrowserAnimationsModule,
+  
     // Application
     AppRoutingModule,
   ],
