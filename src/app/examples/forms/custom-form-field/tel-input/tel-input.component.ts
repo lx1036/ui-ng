@@ -26,6 +26,7 @@ export class Tel {
       <span>&ndash;</span>
       <input class="subscriber" formControlName="subscriber" size="4">
     </div>
+    <span>{{value|json}}</span>
   `,
   styles: [
     `
@@ -74,7 +75,7 @@ export class TelInputCustomFormFieldControlComponent implements MatFormFieldCont
   get value(): Tel | null {
     let n = this.parts.value;
     
-    if (n.area.length == 3 && n.exchange.length == 3 && n.subscriber.length == 4) {
+    if (n.area.length == 1 && n.exchange.length == 1 && n.subscriber.length == 1) {
       return new Tel(n.area, n.exchange, n.subscriber);
     }
     
@@ -85,7 +86,7 @@ export class TelInputCustomFormFieldControlComponent implements MatFormFieldCont
   stateChanges = new Subject<void>();
   ngOnDestroy(): void {
     this.stateChanges.complete();
-    this.fm.stopMonitoring(this.elRef.nativeElement);
+    this.fm.stopMonitoring(this.elementRef.nativeElement);
   }
   
   // id, associate labels and hint.
@@ -94,8 +95,8 @@ export class TelInputCustomFormFieldControlComponent implements MatFormFieldCont
   
   // placeholder
   private _placeholder: string;
-  @Input() set placeholder(plh) {
-    this._placeholder = plh;
+  @Input() set placeholder(placeholder) {
+    this._placeholder = placeholder;
     this.stateChanges.next(); // Since the value of the placeholder may change over time, we need to make sure to trigger change detection in the parent form field.
   }
   get placeholder() {
@@ -107,14 +108,14 @@ export class TelInputCustomFormFieldControlComponent implements MatFormFieldCont
   
   // focused, this property indicates whether or not the form field control should be considered to be in a focused state.
   focused = false;
-  constructor(private fb: FormBuilder, private elRef: ElementRef, private fm: FocusMonitor) {
+  constructor(private fb: FormBuilder, private elementRef: ElementRef, private fm: FocusMonitor) {
     this.parts = fb.group({
       'area': '',
       'exchange': '',
       'subscriber': '',
     });
     
-    fm.monitor(elRef.nativeElement, true).subscribe(origin => {
+    fm.monitor(elementRef.nativeElement, true).subscribe(origin => {
       this.focused = !!origin;
       this.stateChanges.next(); // We also need to remember to emit on the stateChanges stream so change detection can happen.
     });
@@ -168,7 +169,7 @@ export class TelInputCustomFormFieldControlComponent implements MatFormFieldCont
   // onContainerClick, method will be called when the form field is clicked on.
   onContainerClick(event: MouseEvent) {
     if ((event.target as Element).tagName.toLowerCase() != 'input') {
-      this.elRef.nativeElement.querySelector('input').focus();
+      this.elementRef.nativeElement.querySelector('input').focus();
     }
   }
 }
@@ -206,12 +207,16 @@ export class ExampleTelInputRoutingModule {
 
 @NgModule({
   imports: [
+    // angular
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ExampleTelInputRoutingModule,
-    A11yModule,
     
+    //routing
+    ExampleTelInputRoutingModule,
+    
+    // material
+    A11yModule,
     MatFormFieldModule,
     MatIconModule,
   ],
