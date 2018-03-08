@@ -1,9 +1,12 @@
-import {Component, ElementRef, forwardRef, Input, NgModule, OnInit, ViewChild} from '@angular/core';
-import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
+import {Component, ElementRef, forwardRef, Input, NgModule, OnChanges, OnInit, ViewChild} from '@angular/core';
+import {
+  ControlValueAccessor, FormControl, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR, ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 
 @Component({
-  selector: 'app-checkbox',
+  selector: 'ui-checkbox',
   template: `
     <label [ngClass]="'form-checkbox'" [class]="styleClass">
       <input #checkbox type="checkbox" 
@@ -99,43 +102,72 @@ export class CheckboxComponent implements ControlValueAccessor {
 }
 
 
-@NgModule({
-  imports: [CommonModule],
-  declarations: [CheckboxComponent],
-  exports: [CheckboxComponent],
-})
-export class CheckboxModule {}
-
 
 /////////////////////////*****Test*****//////////////////////////////////////////////
 // Example(https://segmentfault.com/a/1190000009070500#articleHeader19)
-
+// https://blog.thoughtram.io/angular/2016/07/27/custom-form-controls-in-angular-2.html)
 export const CONTROL_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => CounterComponent),
   multi: true,
 };
 
+export function createCounterValidator(max, min): Function {
+  return function validateCounterRange(fc: FormControl): object|null {
+    let err = {given: fc.value, max: max, min: min};
+  
+    return (fc.value > +max || fc.value < +min) ? err : null;
+  }
+}
+
 @Component({
-  selector: 'exe-counter',
+  selector: 'counter',
   template: `
     <div>
       <p>current value: {{count}}</p>
-      <button (click)="increment()">+</button>
-      <button (click)="decrement()">-</button>
+      <button (click)="increment()" type="button">+</button>
+      <button (click)="decrement()" type="button">-</button>
     </div>
   `,
-  providers: [CONTROL_VALUE_ACCESSOR]
+  providers: [
+    CONTROL_VALUE_ACCESSOR,
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => CounterComponent),
+      multi: true
+    }
+  ]
 })
-export class CounterComponent implements ControlValueAccessor {
-  propagateChange = (value) => {};
-
+export class CounterComponent implements ControlValueAccessor, OnChanges {
+  
+  _count: number = 0;
+  
+  @Input() counterMax;
+  @Input() counterMin;
+  
+  propagateChange = (value) => {
+    console.log(value);
+  };
+  
+  validateFn: Function = (_: any) => {};
+  ngOnChanges(changes): void {
+    if (changes.counterMax || changes.counterMin) {
+      this.validateFn = createCounterValidator(this.counterMax, this.counterMin);
+    }
+  }
+  
+  validate(fc: FormControl): object|null {
+    return this.validateFn(fc);
+  }
+  
   writeValue(value: any): void {
+    console.log('ngModel directive write initial value:', value);
     if (value) {
       this.count = value;
     }
   }
 
+  // registerOnChange() has access to a function that informs the outside world about changes.
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
@@ -146,16 +178,23 @@ export class CounterComponent implements ControlValueAccessor {
   setDisabledState(isDisabled: boolean): void {
   }
 
-  count: number = 0;
+  set count(value: number) {
+    this._count = value;
+    this.propagateChange(this._count);
+    
+    // https://github.com/angular/angular/blob/master/packages/forms/src/directives/shared.ts#L84
+    // console.log(this.propagateChange);
+  }
+  get count(): number {
+    return this._count;
+  }
 
   increment() {
     this.count++;
-    this.propagateChange(this.count);
   }
 
   decrement() {
     this.count--;
-    this.propagateChange(this.count);
   }
 }
 
@@ -164,10 +203,10 @@ export class CounterComponent implements ControlValueAccessor {
   selector: 'person',
   template: `
     <div style="border: 1px solid black; padding: 1rem; margin: 1rem;" *ngIf="person">
-      <p>Name: <input type="text" [(ngModel)]="person.name" (change)="onChange()"/></p>
-      <p>Age: <input type="text" [(ngModel)]="person.age" (change)="onChange()"/></p>
+      <p>Name: <input type="text" [(ngModel)]="person.name" (change)="change()"/></p>
+      <p>Age: <input type="text" [(ngModel)]="person.age" (change)="change()"/></p>
       <p>Gender: 
-        <select [(ngModel)]="person.gender" (change)="onChange()">
+        <select [(ngModel)]="person.gender" (change)="change()">
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
@@ -185,6 +224,8 @@ export class CounterComponent implements ControlValueAccessor {
 export class PersonComponent implements ControlValueAccessor {
   person: Person;
   onChange: any;
+  
+  change() {}
 
   writeValue(value: any): void {
     if (value) {
@@ -307,3 +348,29 @@ export class SimpleNgModel {
     this.name = 'new value';
   }
 }
+
+
+// NgModule
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [
+    CheckboxComponent,
+    CounterComponent,
+    PersonComponent,
+    PersonTestComponent,
+    SimpleFormControl,
+    SimpleNgModel,
+  ],
+  exports: [
+    CheckboxComponent,
+    CounterComponent,
+    PersonTestComponent,
+    SimpleFormControl,
+    SimpleNgModel,
+  ]
+})
+export class CheckboxModule { }

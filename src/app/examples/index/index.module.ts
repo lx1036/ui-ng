@@ -5,6 +5,7 @@ import {IndexComponent} from './index.component';
 
 
 const childrenRoutes: Routes = [
+  {path: 'checkbox', loadChildren: '../forms/checkbox/checkbox.component#ExampleCheckboxModule'},
   {path: 'tabs', loadChildren: '../layout/tabs/tabs.module#ExampleTabModule'},
   {path: 'code', loadChildren: '../code/code.module#ExampleCodeModule'},
 ];

@@ -1,64 +1,81 @@
-<div class="main-container">
-  <div class="row">
+<!--<div class="main-container">-->
+  <!--<div class="row">-->
 
-    <div class="free-demo-board" fGrid="6">
+    <!--<div class="ui-demo-board" fGrid="6">-->
 
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Default</h3>
-        <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-            Selected value: {{checked}}
-            <free-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked" name="lxlx"></free-checkbox>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked"&gt;&lt;/free-checkbox&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
+      <!--<div class="ui-card-board">-->
+        <!--<h3 class="ui-toolbar">Default</h3>-->
+        <!--<ui-tab-group direction="right">-->
+          <!--<ui-tab header="PREVIEW">-->
+            <!--Selected value: {{checked}}-->
+            <!--<ui-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked" name="lxlx"></ui-checkbox>-->
+          <!--</ui-tab>-->
+          <!--<ui-tab header="CODE">-->
+            <!--<ui-code lang="html">-->
+              <!--&lt;ui-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked"&gt;&lt;/ui-checkbox&gt;-->
+            <!--</ui-code>-->
+          <!--</ui-tab>-->
+        <!--</ui-tab-group>-->
+      <!--</div>-->
 
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Boolean</h3>
-        <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-            {{binaryChecked}}
-            <free-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"></free-checkbox>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"&gt;&lt;/free-checkbox&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
+      <!--<div class="ui-card-board">-->
+        <!--<h3 class="ui-toolbar">Boolean</h3>-->
+        <!--<ui-tab-group direction="right">-->
+          <!--<ui-tab header="PREVIEW">-->
+            <!--{{binaryChecked}}-->
+            <!--<ui-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"></ui-checkbox>-->
+          <!--</ui-tab>-->
+          <!--<ui-tab header="CODE">-->
+            <!--<ui-code lang="html">-->
+              <!--&lt;ui-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"&gt;&lt;/ui-checkbox&gt;-->
+            <!--</ui-code>-->
+          <!--</ui-tab>-->
+        <!--</ui-tab-group>-->
+      <!--</div>-->
 
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Disabled</h3>
-        <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-            <free-checkbox [disabled]="true" [checked]="true" label="Disabled"></free-checkbox>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-checkbox [disabled]="true" [checked]="true" label="disabled checkbox"&gt;&lt;/free-checkbox&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
+      <!--<div class="ui-card-board">-->
+        <!--<h3 class="ui-toolbar">Disabled</h3>-->
+        <!--<ui-tab-group direction="right">-->
+          <!--<ui-tab header="PREVIEW">-->
+            <!--<ui-checkbox [disabled]="true" [checked]="true" label="Disabled"></ui-checkbox>-->
+          <!--</ui-tab>-->
+          <!--<ui-tab header="CODE">-->
+            <!--<ui-code lang="html">-->
+              <!--&lt;ui-checkbox [disabled]="true" [checked]="true" label="disabled checkbox"&gt;&lt;/ui-checkbox&gt;-->
+            <!--</ui-code>-->
+          <!--</ui-tab>-->
+        <!--</ui-tab-group>-->
+      <!--</div>-->
 
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Group</h3>
-            <free-checkbox value="guangdong" [(ngModel)]="selectedCity" label="guangdong"></free-checkbox>
-            <free-checkbox value="beijing" [(ngModel)]="selectedCity" label="beijing"></free-checkbox>
-            <free-checkbox value="shanghai" [(ngModel)]="selectedCity" label="shanghai"></free-checkbox>
+      <!--<div class="ui-card-board">-->
+        <!--<h3 class="ui-toolbar">Group</h3>-->
+            <!--<ui-checkbox value="guangdong" [(ngModel)]="selectedCity" label="guangdong"></ui-checkbox>-->
+            <!--<ui-checkbox value="beijing" [(ngModel)]="selectedCity" label="beijing"></ui-checkbox>-->
+            <!--<ui-checkbox value="shanghai" [(ngModel)]="selectedCity" label="shanghai"></ui-checkbox>-->
 
-            <p style="width: 100%;margin-top: 20px">
-              select city：<span *ngFor="let city of selectedCity" style="margin-right:10px">{{city}}</span>
-            </p>
-      </div>
-    </div>
-  </div>
+            <!--<p style="width: 100%;margin-top: 20px">-->
+              <!--select city：<span *ngFor="let city of selectedCity" style="margin-right:10px">{{city}}</span>-->
+            <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
-  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
-</div>
+  <!--<blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>-->
+<!--</div>-->
+
+
+<form #form="ngForm" (ngSubmit)="submit(form.value)">
+  <p>counter1 value: {{outerCounterValue}}</p>
+  <counter name="counter1" [(ngModel)]="outerCounterValue"></counter>
+  <counter name="counter2" ngModel></counter>
+  <counter ngModel name="counter4" [counterMax]="10" [counterMin]="0"></counter>
+  <button type="submit">Submit</button>
+</form>
+<p *ngIf="!form.valid">Error!!!</p>
+<pre>{{form.value | json}}</pre>
+
+<form [formGroup]="modelForm">
+  <counter formControlName="counter3"></counter>
+</form>
+<p *ngIf="!modelForm.valid">Error!!!</p>
+<pre>{{modelForm.value | json}}</pre>
