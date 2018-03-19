@@ -9,6 +9,7 @@ const childrenRoutes: Routes = [
   {path: 'code', loadChildren: '../code/code.module#ExampleCodeModule'},
   {path: 'tel_input', loadChildren: '../forms/custom-form-field/tel-input/tel-input.component#ExampleTelInputModule'},
   {path: 'file_input', loadChildren: '../forms/custom-form-field/file-input/file-input.component#ExampleFileInputModule'},
+  {path: 'life_cycle', loadChildren: '../life-cycle/life-cycle.component#LifeCycleModule'},
   {path: 'tabs', loadChildren: '../layout/tabs/tabs.module#ExampleTabModule'},
 ];
 const routes: Routes = [

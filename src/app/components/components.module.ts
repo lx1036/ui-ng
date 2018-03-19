@@ -5,12 +5,6 @@ import { CodeComponent } from './code/code.component';
 @NgModule({
   imports: [],
   declarations: [CodeComponent],
+  exports: []
 })
-export class AppComponentsModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: AppComponentsModule,
-      providers: [],
-    }
-  }
-}
+export class ComponentsModule {}
