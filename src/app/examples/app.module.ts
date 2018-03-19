@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
-
 
 const routes: Routes = [
   {path: '', loadChildren: './index/index.module#IndexModule'}

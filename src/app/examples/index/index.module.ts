@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import {MatButton, MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
+import {DialogModule} from '../dialog/dialog.component';
 import {IndexComponent} from './index.component';
 
 
 const childrenRoutes: Routes = [
   {path: 'checkbox', loadChildren: '../forms/checkbox/checkbox.component#ExampleCheckboxModule'},
   {path: 'code', loadChildren: '../code/code.module#ExampleCodeModule'},
+  {path: 'dialog', loadChildren: '../dialog/dialog.component#DialogModule'},
   {path: 'tel_input', loadChildren: '../forms/custom-form-field/tel-input/tel-input.component#ExampleTelInputModule'},
   {path: 'file_input', loadChildren: '../forms/custom-form-field/file-input/file-input.component#ExampleFileInputModule'},
   {path: 'life_cycle', loadChildren: '../life-cycle/life-cycle.component#LifeCycleModule'},
