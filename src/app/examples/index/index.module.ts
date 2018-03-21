@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatButton, MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
+import {ExpressionChangedModule} from '../cd/expression-changed.component';
 import {DialogModule} from '../dialog/dialog.component';
 import {IndexComponent} from './index.component';
 
@@ -35,6 +36,8 @@ export class IndexRoutingModule {}
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    
+    ExpressionChangedModule,
   ],
   declarations: [IndexComponent]
 })
