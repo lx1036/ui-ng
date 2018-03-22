@@ -195,14 +195,14 @@ export class HComponent {
   template: `
     <form [formGroup]="form">
       <mat-form-field>
-        <input *ngIf="isFile()" matInput placeholder="Enter name" formControlName="filename">
-        <input *ngIf="isDirectory()" matInput placeholder="Enter name" formControlName="filename">
-        <mat-hint>
-          Some hint.
-        </mat-hint>
+        <input *ngIf="isFile()" matInput placeholder="Enter name">
+        <!--<input *ngIf="isFile()" matInput placeholder="Enter name" formControlName="filename">-->
+        <!--<input *ngIf="isDirectory()" matInput placeholder="Enter name" formControlName="filename">-->
+        <mat-hint>Some hint.</mat-hint>
       </mat-form-field>
-
     </form>
+    
+    <p>{{form.value | json}}</p>
   `
 })
 export class IComponent {
