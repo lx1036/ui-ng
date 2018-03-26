@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
+import {NewMergeModuleProvidersModule} from './merge-module-providers/merge-module-providers.module';
 
 const routes: Routes = [
   {path: '', loadChildren: './index/index.module#IndexModule'}
@@ -32,6 +33,8 @@ export class AppRoutingModule {}
   
     // Application
     AppRoutingModule,
+    
+    NewMergeModuleProvidersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

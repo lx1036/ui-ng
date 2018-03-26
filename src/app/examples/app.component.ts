@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div>
+      <merge-module-providers></merge-module-providers>
       <router-outlet></router-outlet>
     </div>
   `,
