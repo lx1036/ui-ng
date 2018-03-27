@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
+import {SimpleFormControlModule} from './forms/simple-form-control/simple-form-control.component';
 import {NewMergeModuleProvidersModule} from './merge-module-providers/merge-module-providers.module';
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ export class AppRoutingModule {}
     AppRoutingModule,
     
     NewMergeModuleProvidersModule,
+    SimpleFormControlModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <div>
       <merge-module-providers></merge-module-providers>
       <router-outlet></router-outlet>
+      <simple-form-control></simple-form-control>
     </div>
   `,
   styleUrls: ['./app.component.css']
