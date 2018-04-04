@@ -39,15 +39,27 @@ export class TemplateDirective {
   }
 }
 
+@Component({
+  selector: 'f-header',
+  template: '<ng-content></ng-content>'
+})
+
+export class HeaderComponent {
+}
+
 @NgModule({
   imports: [CommonModule],
   declarations: [
     TemplateComponent,
     TemplateDirective,
+  
+    HeaderComponent,
   ],
   exports: [
     TemplateComponent,
     TemplateDirective,
+  
+    HeaderComponent,
   ]
 })
 export class ShareModule {}
