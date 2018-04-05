@@ -4,7 +4,8 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatInputModule} from '../packages/material/input';
+import {MatFormFieldModule} from '../packages/material/form-field';
 
 /**
  * https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
@@ -193,12 +194,18 @@ export class HComponent {
 @Component({
   selector: 'i-comp',
   template: `
+    <h1>i-comp</h1>
     <form [formGroup]="form">
       <mat-form-field>
-        <input *ngIf="isFile()" matInput placeholder="Enter name">
+        <!--<ng-template [ngIf]="true">-->
+        <input matInput placeholder="Enter name">
+        <!--</ng-template>-->
+        <!--<input  matInput placeholder="Enter name">-->
+        <mat-hint>Some hint.</mat-hint>
+        <!--<input *ngIf="true" matInput placeholder="Enter name">-->
         <!--<input *ngIf="isFile()" matInput placeholder="Enter name" formControlName="filename">-->
         <!--<input *ngIf="isDirectory()" matInput placeholder="Enter name" formControlName="filename">-->
-        <mat-hint>Some hint.</mat-hint>
+        <!--<mat-hint>Some hint.</mat-hint>-->
       </mat-form-field>
     </form>
     

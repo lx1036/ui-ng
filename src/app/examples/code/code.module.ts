@@ -18,7 +18,6 @@ import {ExampleCodeComponent} from './code.component';
 })
 export class ExampleCodeRoutingModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }
 

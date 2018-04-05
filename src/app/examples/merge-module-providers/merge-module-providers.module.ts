@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 @Injectable()
 export class AService {
   log() {
-    console.log(this.constructor.name);
   }
 }
 

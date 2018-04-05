@@ -19,7 +19,6 @@ import {ExampleTabsComponent} from './tabs.component';
 })
 export class ExampleTabRoutingModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }
 
@@ -36,6 +35,5 @@ export class ExampleTabRoutingModule {
 })
 export class ExampleTabModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }

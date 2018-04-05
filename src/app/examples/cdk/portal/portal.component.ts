@@ -79,7 +79,6 @@ export class AComponent {}
 })
 export class ExamplePortalRoutingModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }
 

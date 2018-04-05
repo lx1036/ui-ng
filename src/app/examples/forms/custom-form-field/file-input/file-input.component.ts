@@ -67,7 +67,7 @@ export class FileInputCustomFormFieldControlComponent implements MatFormFieldCon
     this.stateChanges.next();
   }
   get value(): FileInput | null {
-    console.log(this.elementRef.nativeElement.value);
+    //console.log(this.elementRef.nativeElement.value);
     return this.empty ? null : new FileInput(this.elementRef.nativeElement.value || []);
   }
   
@@ -271,7 +271,7 @@ export class ExampleFileInputCustomFormFieldControlComponent implements OnInit {
     });
   }
   onSubmit() {
-    console.log('SUBMITTED', this.formDoc.value);
+    //console.log('SUBMITTED', this.formDoc.value);
   }
 }
 

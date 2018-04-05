@@ -69,7 +69,7 @@ export class ExampleOverlay {
 
     this.nextPosition += 30;
 
-    console.log(typeof this.templatePortals.first, this.templatePortals.length);
+    //console.log(typeof this.templatePortals.first, this.templatePortals.length);
     this.overlay.create(config).attach(this.templatePortals.first);
   }
 

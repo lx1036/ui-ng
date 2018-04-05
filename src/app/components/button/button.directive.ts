@@ -17,7 +17,6 @@ export class ButtonDirective implements AfterViewInit {
   button: HTMLButtonElement;
   
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    console.log(this.elementRef.nativeElement);
   }
   
   ngAfterViewInit() {

@@ -200,7 +200,6 @@ export class ExampleCustomFormFieldControl {}
 })
 export class ExampleTelInputRoutingModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }
 
