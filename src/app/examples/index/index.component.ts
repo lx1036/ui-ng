@@ -28,6 +28,7 @@ const childrenRoutes: Routes = [
   {path: 'file_input', loadChildren: '../forms/custom-form-field/file-input/file-input.component#ExampleFileInputModule'},
   {path: 'life_cycle', loadChildren: '../life-cycle/life-cycle.component#LifeCycleModule'},
   {path: 'tabs', loadChildren: '../layout/tabs/tabs.module#ExampleTabModule'},
+  {path: 'cdk_portal', loadChildren: '../cdk/portal/portal.component#ExamplePortalModule'},
 ];
 const routes: Routes = [
   {path: '', component: IndexComponent, children: childrenRoutes},
