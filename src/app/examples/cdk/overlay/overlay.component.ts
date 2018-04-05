@@ -6,6 +6,18 @@ import {tap, filter} from 'rxjs/operators';
 
 
 @Component({
+  selector: '[test-comp]',
+  template: `
+    <div><ng-content></ng-content></div>
+    <p>test-comp</p>
+  `
+})
+export class TestNgContentComponent {
+  name = 'lx1036';
+}
+
+
+@Component({
   selector: 'app-overlay',
   template: `
     <button (click)="openAPanel()">button1</button>
@@ -14,6 +26,9 @@ import {tap, filter} from 'rxjs/operators';
     <button cdkOverlayOrigin (click)="openDPanel()">button4</button>
     <button (click)="openPanelWithBackdrop()">Backdrop panel</button>
     <button (click)="openKeyboardTracking()">Keyboard tracking</button>
+    
+    <button test-comp #test>Normal</button>
+    {{test.name}}
     
     <ng-template cdk-portal>
       <p>cdkPortal1</p>
@@ -147,6 +162,7 @@ export class ExampleOverlayRoutingModule {
     ExampleOverlay,
     APanel,
     KeyboardTrackingPanel,
+    TestNgContentComponent
   ],
   exports: [
     ExampleOverlay
