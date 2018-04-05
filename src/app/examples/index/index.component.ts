@@ -29,6 +29,7 @@ const childrenRoutes: Routes = [
   {path: 'life_cycle', loadChildren: '../life-cycle/life-cycle.component#LifeCycleModule'},
   {path: 'tabs', loadChildren: '../layout/tabs/tabs.module#ExampleTabModule'},
   {path: 'cdk_portal', loadChildren: '../cdk/portal/portal.component#ExamplePortalModule'},
+  {path: 'cdk_overlay', loadChildren: '../cdk/overlay/overlay.component#ExampleOverlayModule'},
 ];
 const routes: Routes = [
   {path: '', component: IndexComponent, children: childrenRoutes},
