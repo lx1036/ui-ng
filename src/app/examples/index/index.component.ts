@@ -5,6 +5,7 @@ import {ExpressionChangedModule} from '../cd/expression-changed.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {DemoButtonsModule} from '../packages/demo/button/button';
 
 @Component({
   selector: 'app-index',
@@ -54,7 +55,9 @@ export class IndexRoutingModule {}
     
     ExpressionChangedModule,
     
-    ComponentsModule
+    ComponentsModule,
+
+    DemoButtonsModule,
   ],
   declarations: [IndexComponent]
 })
