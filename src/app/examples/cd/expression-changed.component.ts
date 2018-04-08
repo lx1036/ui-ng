@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '../packages/material/input';
-import {MatFormFieldModule} from '../packages/material/form-field';
 
 /**
  * https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
@@ -245,7 +244,6 @@ export class IComponent {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
     MatInputModule,
   ],
   declarations: [

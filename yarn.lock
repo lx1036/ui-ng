@@ -147,12 +147,6 @@
   version "5.2.9"
   resolved "http://registry.npm.taobao.org/@angular/language-service/download/@angular/language-service-5.2.9.tgz#4838bb6319c99e8f5beb08bdfb392ee9a1173766"
 
-"@angular/material@^5.2.4":
-  version "5.2.4"
-  resolved "http://registry.npm.taobao.org/@angular/material/download/@angular/material-5.2.4.tgz#9e823798324283d23ea839156fac5bcb73443d55"
-  dependencies:
-    tslib "^1.7.1"
-
 "@angular/platform-browser-dynamic@^5.0.0":
   version "5.2.9"
   resolved "http://registry.npm.taobao.org/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-5.2.9.tgz#86075b7bb694861f722ceda29aae186b045c6b7d"

@@ -80,12 +80,12 @@ export type MatFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
   // The MatInput styles are fairly minimal so it shouldn't be a big deal for people who
   // aren't using MatInput.
   styleUrls: [
-    'form-field.scss',
-    'form-field-fill.scss',
-    'form-field-legacy.scss',
-    'form-field-outline.scss',
-    'form-field-standard.scss',
-    '../input/input.scss',
+    'form-field.css',
+    'form-field-fill.css',
+    'form-field-legacy.css',
+    'form-field-outline.css',
+    'form-field-standard.css',
+    '../input/input.css',
   ],
   animations: [matFormFieldAnimations.transitionMessages],
   host: {
@@ -407,8 +407,6 @@ export class MatFormField extends _MatFormFieldMixinBase
 
   /** Throws an error if the form field's control is missing. */
   protected _validateControlChild() {
-    console.log(this._control);
-
     if (!this._control) {
       throw getMatFormFieldMissingControlError();
     }

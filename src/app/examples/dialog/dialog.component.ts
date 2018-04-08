@@ -5,7 +5,7 @@ import {
   MAT_DIALOG_DATA,
   MatCardModule, MatCheckboxModule, MatDialog, MatDialogModule, MatDialogRef, MatFormFieldModule, MatInputModule,
   MatSelectModule
-} from '@angular/material';
+} from '../packages/material';
 import {RouterModule} from '@angular/router';
 
 @Component({

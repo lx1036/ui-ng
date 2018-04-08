@@ -1,0 +1,24 @@
+@import '../core/style/menu-common';
+
+/**
+ * The max-height of the panel, currently matching mat-select value.
+ * TODO: Check value with MD team.
+ */
+$mat-autocomplete-panel-max-height: 256px !default;
+
+.mat-autocomplete-panel {
+  @include mat-menu-base(8);
+  visibility: hidden;
+
+  max-width: none;
+  max-height: $mat-autocomplete-panel-max-height;
+  position: relative;
+
+  &.mat-autocomplete-visible {
+    visibility: visible;
+  }
+
+  &.mat-autocomplete-hidden {
+    visibility: hidden;
+  }
+}

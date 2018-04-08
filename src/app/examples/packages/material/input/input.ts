@@ -358,7 +358,7 @@ export class MatInput extends _MatInputMixinBase implements MatFormFieldControl<
    * Implemented as part of MatFormFieldControl.
    * @docs-private
    */
-  setDescribedByIds(ids: string[]) { this._ariaDescribedby = ids.join(' '); console.log(this._ariaDescribedby, ids)}
+  setDescribedByIds(ids: string[]) { this._ariaDescribedby = ids.join(' '); }
 
   /**
    * Implemented as part of MatFormFieldControl.

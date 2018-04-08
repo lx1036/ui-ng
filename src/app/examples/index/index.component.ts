@@ -1,8 +1,10 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import {MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import {ComponentsModule} from '../../components/components.module';
 import {ExpressionChangedModule} from '../cd/expression-changed.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-index',

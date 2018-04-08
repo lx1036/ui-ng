@@ -5,11 +5,12 @@ import {CommonModule} from '@angular/common';
 /** Data structure for holding telephone number. */
 import {Component, ElementRef, HostBinding, Input, NgModule, OnDestroy} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, NgControl, ReactiveFormsModule} from '@angular/forms';
-import {MatFormFieldControl, MatFormFieldModule, MatIconModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {Subject} from 'rxjs/Subject';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 
 export class Tel {

@@ -3,9 +3,11 @@ import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {CommonModule} from '@angular/common';
 import {Component, ElementRef, HostBinding, HostListener, Input, NgModule, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {ControlValueAccessor, FormBuilder, FormGroup, FormsModule, NgControl, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatFormFieldControl, MatFormFieldModule, MatIconModule, MatToolbarModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {Subject} from 'rxjs/Subject';
+import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 class FileInput {
