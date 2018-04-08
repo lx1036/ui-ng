@@ -41,7 +41,7 @@ export class ExampleCheckboxComponent implements OnInit {
   }
   
   submit(value) {
-    console.log(value);
+    // console.log(value);
   }
 }
 
@@ -59,7 +59,6 @@ export class ExampleCheckboxComponent implements OnInit {
 })
 export class ExampleCheckboxRoutingModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }
 
@@ -80,6 +79,5 @@ export class ExampleCheckboxRoutingModule {
 })
 export class ExampleCheckboxModule {
   constructor() {
-    console.log(this.constructor.name);
   }
 }

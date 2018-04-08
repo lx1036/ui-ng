@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 /src/tmp
-yarn.lock
+yarn-error.log

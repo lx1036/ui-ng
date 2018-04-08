@@ -9,7 +9,6 @@ export class ExampleTabsComponent implements OnInit {
   tabs = [];
 
   constructor() {
-    console.log(this.constructor.name);
   }
 
   ngOnInit() {

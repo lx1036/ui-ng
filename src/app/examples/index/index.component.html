@@ -1,11 +1,25 @@
 
 <mat-toolbar>
+  <button mat-button><a routerLink="/button" routerLinkActive="active">Button</a></button>
   <button mat-button><a routerLink="/checkbox" routerLinkActive="active">Checkbox</a></button>
+  <button mat-button><a routerLink="/dialog" routerLinkActive="active">Dialog</a></button>
   <button mat-button><a routerLink="/tabs" routerLinkActive="active">Tabs</a></button>
   <button mat-button><a routerLink="/code" routerLinkActive="active">Code</a></button>
-  <button mat-button><a routerLink="/custom_form_field_control" routerLinkActive="active">Form Field Control</a></button>
+  <button mat-button><a routerLink="/tel_input" routerLinkActive="active">Tel Input</a></button>
+  <button mat-button><a routerLink="/file_input" routerLinkActive="active">File Input</a></button>
+  <button mat-button><a routerLink="/life_cycle" routerLinkActive="active">Life Cycle</a></button>
+  <button mat-button><a routerLink="/cdk_portal" routerLinkActive="active">CDK portal</a></button>
+  <button mat-button><a routerLink="/cdk_overlay" routerLinkActive="active">CDK Overlay</a></button>
 </mat-toolbar>
 
 <mat-card>
   <router-outlet></router-outlet>
+</mat-card>
+
+<mat-card>
+  <a-comp></a-comp>
+  <c-comp></c-comp>
+  <f-comp></f-comp>
+  <h-comp></h-comp>
+  <i-comp></i-comp>
 </mat-card>
