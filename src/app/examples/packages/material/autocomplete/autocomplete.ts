@@ -69,7 +69,7 @@ export const MAT_AUTOCOMPLETE_DEFAULT_OPTIONS =
   moduleId: module.id,
   selector: 'mat-autocomplete',
   templateUrl: 'autocomplete.html',
-  styleUrls: ['autocomplete.css'],
+  styleUrls: ['autocomplete.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'matAutocomplete',
