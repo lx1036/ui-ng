@@ -34,7 +34,7 @@ import {matExpansionAnimations} from './expansion-animations';
 @Component({
   moduleId: module.id,
   selector: 'mat-expansion-panel-header',
-  styleUrls: ['./expansion-panel-header.css'],
+  styleUrls: ['./expansion-panel-header.scss'],
   templateUrl: './expansion-panel-header.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

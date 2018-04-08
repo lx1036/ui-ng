@@ -45,7 +45,7 @@ let progressbarId = 0;
   },
   inputs: ['color'],
   templateUrl: 'progress-bar.html',
-  styleUrls: ['progress-bar.css'],
+  styleUrls: ['progress-bar.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })

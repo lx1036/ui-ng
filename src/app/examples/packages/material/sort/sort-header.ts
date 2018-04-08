@@ -64,7 +64,7 @@ export interface ArrowViewStateTransition {
   selector: '[mat-sort-header]',
   exportAs: 'matSortHeader',
   templateUrl: 'sort-header.html',
-  styleUrls: ['sort-header.css'],
+  styleUrls: ['sort-header.scss'],
   host: {
     '(click)': '_handleClick()',
     '(mouseenter)': '_setIndicatorHintVisible(true)',

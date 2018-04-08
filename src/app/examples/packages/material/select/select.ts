@@ -185,7 +185,7 @@ export class MatSelectTrigger {}
   selector: 'mat-select',
   exportAs: 'matSelect',
   templateUrl: 'select.html',
-  styleUrls: ['select.css'],
+  styleUrls: ['select.scss'],
   inputs: ['disabled', 'disableRipple', 'tabIndex'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

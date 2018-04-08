@@ -153,7 +153,7 @@ export class MatCardAvatar {}
   selector: 'mat-card',
   exportAs: 'matCard',
   templateUrl: 'card.html',
-  styleUrls: ['card.css'],
+  styleUrls: ['card.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {'class': 'mat-card'}

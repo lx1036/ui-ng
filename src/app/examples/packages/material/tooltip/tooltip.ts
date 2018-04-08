@@ -492,7 +492,7 @@ export type TooltipVisibility = 'initial' | 'visible' | 'hidden';
   moduleId: module.id,
   selector: 'mat-tooltip-component',
   templateUrl: 'tooltip.html',
-  styleUrls: ['tooltip.css'],
+  styleUrls: ['tooltip.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [matTooltipAnimations.tooltipState],

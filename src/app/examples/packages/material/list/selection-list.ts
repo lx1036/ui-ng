@@ -288,7 +288,7 @@ export class MatListOption extends _MatListOptionMixinBase
     '[attr.aria-disabled]': 'disabled.toString()',
   },
   template: '<ng-content></ng-content>',
-  styleUrls: ['list.css'],
+  styleUrls: ['list.scss'],
   encapsulation: ViewEncapsulation.None,
   providers: [MAT_SELECTION_LIST_VALUE_ACCESSOR],
   changeDetection: ChangeDetectionStrategy.OnPush

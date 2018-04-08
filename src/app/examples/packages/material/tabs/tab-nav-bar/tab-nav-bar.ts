@@ -67,7 +67,7 @@ export const _MatTabNavMixinBase = mixinColor(MatTabNavBase, 'primary');
   exportAs: 'matTabNavBar, matTabNav',
   inputs: ['color'],
   templateUrl: 'tab-nav-bar.html',
-  styleUrls: ['tab-nav-bar.css'],
+  styleUrls: ['tab-nav-bar.scss'],
   host: {'class': 'mat-tab-nav-bar'},
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

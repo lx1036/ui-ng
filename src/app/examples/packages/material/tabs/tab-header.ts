@@ -64,7 +64,7 @@ export const _MatTabHeaderMixinBase = mixinDisableRipple(MatTabHeaderBase);
   moduleId: module.id,
   selector: 'mat-tab-header',
   templateUrl: 'tab-header.html',
-  styleUrls: ['tab-header.css'],
+  styleUrls: ['tab-header.scss'],
   inputs: ['disableRipple'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

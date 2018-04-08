@@ -38,7 +38,7 @@ export class MatCalendarCell {
   moduleId: module.id,
   selector: '[mat-calendar-body]',
   templateUrl: 'calendar-body.html',
-  styleUrls: ['calendar-body.css'],
+  styleUrls: ['calendar-body.scss'],
   host: {
     'class': 'mat-calendar-body',
     'role': 'grid',

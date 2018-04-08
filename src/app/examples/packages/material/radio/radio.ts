@@ -316,7 +316,7 @@ export const _MatRadioButtonMixinBase =
   moduleId: module.id,
   selector: 'mat-radio-button',
   templateUrl: 'radio.html',
-  styleUrls: ['radio.css'],
+  styleUrls: ['radio.scss'],
   inputs: ['color', 'disableRipple', 'tabIndex'],
   encapsulation: ViewEncapsulation.None,
   exportAs: 'matRadioButton',

@@ -44,7 +44,7 @@ import {FocusTrap, FocusTrapFactory} from '@angular/cdk/a11y';
   moduleId: module.id,
   selector: 'mat-bottom-sheet-container',
   templateUrl: 'bottom-sheet-container.html',
-  styleUrls: ['bottom-sheet-container.css'],
+  styleUrls: ['bottom-sheet-container.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   animations: [matBottomSheetAnimations.bottomSheetState],

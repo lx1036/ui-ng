@@ -67,7 +67,7 @@ export const _MatTabGroupMixinBase = mixinColor(mixinDisableRipple(MatTabGroupBa
   selector: 'mat-tab-group',
   exportAs: 'matTabGroup',
   templateUrl: 'tab-group.html',
-  styleUrls: ['tab-group.css'],
+  styleUrls: ['tab-group.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   inputs: ['color', 'disableRipple'],

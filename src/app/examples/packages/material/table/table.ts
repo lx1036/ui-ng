@@ -17,7 +17,7 @@ import {CDK_TABLE_TEMPLATE, CdkTable} from '@angular/cdk/table';
   selector: 'mat-table',
   exportAs: 'matTable',
   template: CDK_TABLE_TEMPLATE,
-  styleUrls: ['table.css'],
+  styleUrls: ['table.scss'],
   host: {
     'class': 'mat-table',
   },

@@ -39,7 +39,7 @@ import {MatYearView} from './year-view';
   moduleId: module.id,
   selector: 'mat-calendar',
   templateUrl: 'calendar.html',
-  styleUrls: ['calendar.css'],
+  styleUrls: ['calendar.scss'],
   host: {
     'class': 'mat-calendar',
   },

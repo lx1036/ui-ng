@@ -128,7 +128,7 @@ export const _MatSliderMixinBase =
     '[class.mat-slider-hide-last-tick]': 'disabled || _isMinValue && _thumbGap && _invertAxis',
   },
   templateUrl: 'slider.html',
-  styleUrls: ['slider.css'],
+  styleUrls: ['slider.scss'],
   inputs: ['disabled', 'color', 'tabIndex'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

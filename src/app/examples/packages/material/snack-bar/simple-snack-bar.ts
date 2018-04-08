@@ -20,7 +20,7 @@ import {matSnackBarAnimations} from './snack-bar-animations';
   moduleId: module.id,
   selector: 'simple-snack-bar',
   templateUrl: 'simple-snack-bar.html',
-  styleUrls: ['simple-snack-bar.css'],
+  styleUrls: ['simple-snack-bar.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [matSnackBarAnimations.contentFade],

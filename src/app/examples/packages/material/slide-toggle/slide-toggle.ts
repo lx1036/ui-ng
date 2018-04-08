@@ -78,7 +78,7 @@ export const _MatSlideToggleMixinBase =
     '[class.mat-slide-toggle-label-before]': 'labelPosition == "before"',
   },
   templateUrl: 'slide-toggle.html',
-  styleUrls: ['slide-toggle.css'],
+  styleUrls: ['slide-toggle.scss'],
   providers: [MAT_SLIDE_TOGGLE_VALUE_ACCESSOR],
   inputs: ['disabled', 'disableRipple', 'color', 'tabIndex'],
   encapsulation: ViewEncapsulation.None,

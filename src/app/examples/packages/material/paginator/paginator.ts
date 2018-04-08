@@ -49,7 +49,7 @@ export class PageEvent {
   selector: 'mat-paginator',
   exportAs: 'matPaginator',
   templateUrl: 'paginator.html',
-  styleUrls: ['paginator.css'],
+  styleUrls: ['paginator.scss'],
   host: {
     'class': 'mat-paginator',
   },

@@ -39,7 +39,7 @@ const MAT_FIT_MODE = 'fit';
   selector: 'mat-grid-list',
   exportAs: 'matGridList',
   templateUrl: 'grid-list.html',
-  styleUrls: ['grid-list.css'],
+  styleUrls: ['grid-list.scss'],
   host: {
     'class': 'mat-grid-list',
   },

@@ -39,7 +39,7 @@ import {matSnackBarAnimations} from './snack-bar-animations';
   moduleId: module.id,
   selector: 'snack-bar-container',
   templateUrl: 'snack-bar-container.html',
-  styleUrls: ['snack-bar-container.css'],
+  styleUrls: ['snack-bar-container.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   animations: [matSnackBarAnimations.snackBarState],

@@ -41,7 +41,7 @@ export class MatToolbarRow {}
   selector: 'mat-toolbar',
   exportAs: 'matToolbar',
   templateUrl: 'toolbar.html',
-  styleUrls: ['toolbar.css'],
+  styleUrls: ['toolbar.scss'],
   inputs: ['color'],
   host: {
     'class': 'mat-toolbar',

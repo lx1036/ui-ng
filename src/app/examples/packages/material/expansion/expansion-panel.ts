@@ -49,7 +49,7 @@ let uniqueId = 0;
  */
 @Component({
   moduleId: module.id,
-  styleUrls: ['./expansion-panel.css'],
+  styleUrls: ['./expansion-panel.scss'],
   selector: 'mat-expansion-panel',
   exportAs: 'matExpansionPanel',
   templateUrl: './expansion-panel.html',

@@ -79,7 +79,7 @@ const MAT_MENU_BASE_ELEVATION = 2;
   moduleId: module.id,
   selector: 'mat-menu',
   templateUrl: 'menu.html',
-  styleUrls: ['menu.css'],
+  styleUrls: ['menu.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   animations: [

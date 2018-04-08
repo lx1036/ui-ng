@@ -91,7 +91,7 @@ const INDETERMINATE_ANIMATION_TEMPLATE = `
   },
   inputs: ['color'],
   templateUrl: 'progress-spinner.html',
-  styleUrls: ['progress-spinner.css'],
+  styleUrls: ['progress-spinner.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
@@ -256,7 +256,7 @@ export class MatProgressSpinner extends _MatProgressSpinnerMixinBase implements 
   },
   inputs: ['color'],
   templateUrl: 'progress-spinner.html',
-  styleUrls: ['progress-spinner.css'],
+  styleUrls: ['progress-spinner.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })

@@ -28,7 +28,7 @@ import {coerceToNumber} from './grid-list-measure';
     'class': 'mat-grid-tile',
   },
   templateUrl: 'grid-tile.html',
-  styleUrls: ['grid-list.css'],
+  styleUrls: ['grid-list.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

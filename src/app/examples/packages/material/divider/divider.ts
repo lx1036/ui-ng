@@ -20,7 +20,7 @@ import {coerceBooleanProperty} from '@angular/cdk/coercion';
     'class': 'mat-divider'
   },
   template: '',
-  styleUrls: ['divider.css'],
+  styleUrls: ['divider.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -90,7 +90,7 @@ export class MatChipListChange {
     '(keydown)': '_keydown($event)'
   },
   providers: [{provide: MatFormFieldControl, useExisting: MatChipList}],
-  styleUrls: ['chips.css'],
+  styleUrls: ['chips.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
