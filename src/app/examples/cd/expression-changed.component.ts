@@ -4,7 +4,7 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '../packages/material/input';
+import {MatInputModule} from "@angular/material";
 
 /**
  * https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4

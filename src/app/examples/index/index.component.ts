@@ -2,10 +2,6 @@ import {Component, NgModule, OnInit} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ComponentsModule} from '../../components/components.module';
 import {ExpressionChangedModule} from '../cd/expression-changed.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {DemoButtonsModule} from '../packages/demo/button/button';
 
 @Component({
   selector: 'app-index',
@@ -49,15 +45,11 @@ export class IndexRoutingModule {}
   imports: [
     IndexRoutingModule,
     
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
     
     ExpressionChangedModule,
     
     ComponentsModule,
 
-    DemoButtonsModule,
   ],
   declarations: [IndexComponent]
 })

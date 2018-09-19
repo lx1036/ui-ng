@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 import {Component, ElementRef, HostBinding, HostListener, Input, NgModule, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {ControlValueAccessor, FormBuilder, FormGroup, FormsModule, NgControl, ReactiveFormsModule, Validators} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {Subject} from 'rxjs/Subject';
+import {Subject} from 'rxjs';
 import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';

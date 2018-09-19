@@ -17,8 +17,6 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@angular/material/*": ["app/examples/packages/material/*"],
-      "@angular/cdk/*": ["app/examples/packages/cdk/*"]
     }
   },
   "angularCompilerOptions": {
