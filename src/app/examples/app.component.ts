@@ -10,6 +10,7 @@ import {DialogModule} from "./dialog/dialog.component";
 import {A11yModule} from "@angular/cdk/a11y";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
+import {TabsModule} from "../components/layout/tabset/tabs.component";
 
 
 
@@ -21,6 +22,8 @@ import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/materia
       <!--<merge-module-providers></merge-module-providers>-->
       <!--<router-outlet></router-outlet>-->
       <!--<simple-form-control></simple-form-control>-->
+      
+      <demo-tabs></demo-tabs>
     </div>
   `,
   styles: []
@@ -59,19 +62,21 @@ export class AppRoutingModule {}
     BrowserAnimationsModule,
     
     // Application
-    AppRoutingModule,
+    // AppRoutingModule,
     
-    NewMergeModuleProvidersModule,
-    SimpleFormControlModule,
+    // NewMergeModuleProvidersModule,
+    // SimpleFormControlModule,
     
-    OverlayModule,
-    PortalModule,
-    DialogModule,
-    A11yModule,
-    CdkTableModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
+    // OverlayModule,
+    // PortalModule,
+    // DialogModule,
+    // A11yModule,
+    // CdkTableModule,
+    // MatCardModule,
+    // MatToolbarModule,
+    // MatButtonModule,
+
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
