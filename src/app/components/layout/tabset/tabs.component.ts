@@ -85,26 +85,26 @@ export class Tab implements AfterContentChecked {
     {{activeId}}
     {{active}}
     <div (click)="test()">test</div>
-    <!--<ul [class]="'nav'">-->
-      <!--<li class="nav-item" *ngFor="let tab of tabs">-->
-        <!--<a [id]="tab.id" -->
-           <!--class="nav-link {{tab.id === activeId ? 'active' : null}}" -->
-           <!--(click)="!!select(tab.id)">-->
-          <!--<ng-template [ngTemplateOutlet]="tab.titleTpl?.templateRef"></ng-template>-->
-        <!--</a>-->
-      <!--</li>-->
-    <!--</ul>-->
-    <!--<div class="tab-content">-->
-      <!--<div>{{activeId}}</div>-->
-      <!--<ng-template ngFor let-tab [ngForOf]="tabs">-->
-        <!--<div id="panel-{{tab.id}}" -->
-             <!--class="tab-pane {{tab.id === activeId ? 'active' : null}}" -->
-             <!--role="tabpanel" -->
-             <!--*ngIf="tab.id === activeId">-->
-          <!--<ng-template [ngTemplateOutlet]="tab.contentTpl?.templateRef"></ng-template>-->
-        <!--</div>-->
-      <!--</ng-template>-->
-    <!--</div>-->
+    <ul [class]="'nav'">
+      <li class="nav-item" *ngFor="let tab of tabs">
+        <a [id]="tab.id" 
+           class="nav-link {{tab.id === activeId ? 'active' : null}}" 
+           (click)="!!select(tab.id)">
+          <ng-template [ngTemplateOutlet]="tab.titleTpl?.templateRef"></ng-template>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div>{{activeId}}</div>
+      <ng-template ngFor let-tab [ngForOf]="tabs">
+        <div id="panel-{{tab.id}}" 
+             class="tab-pane {{tab.id === activeId ? 'active' : null}}" 
+             role="tabpanel"
+             *ngIf="tab.id === activeId">
+          <ng-template [ngTemplateOutlet]="tab.contentTpl?.templateRef"></ng-template>
+        </div>
+      </ng-template>
+    </div>
   `
 })
 export class TabSet implements AfterContentChecked {

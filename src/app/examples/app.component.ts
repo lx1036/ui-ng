@@ -11,6 +11,8 @@ import {A11yModule} from "@angular/cdk/a11y";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
 import {TabsModule} from "../components/layout/tabset/tabs.component";
+import {DemoBootstrapDropdownModule} from "../components/dropdown/dropdown.component";
+import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
 
 
 
@@ -23,7 +25,10 @@ import {TabsModule} from "../components/layout/tabset/tabs.component";
       <!--<router-outlet></router-outlet>-->
       <!--<simple-form-control></simple-form-control>-->
       
-      <demo-tabs></demo-tabs>
+      <!--<demo-tabs></demo-tabs>-->
+      <!--<demo-bootstrap-dropdown></demo-bootstrap-dropdown>-->
+      
+      <demo-bootstrap-alerts></demo-bootstrap-alerts>
     </div>
   `,
   styles: []
@@ -55,6 +60,9 @@ export class AppRoutingModule {}
 @NgModule({
   declarations: [
     AppComponent,
+
+
+    // Bootstrap
   ],
   imports: [
     // Angular
@@ -76,7 +84,10 @@ export class AppRoutingModule {}
     // MatToolbarModule,
     // MatButtonModule,
 
-    TabsModule
+    TabsModule,
+    DemoBootstrapDropdownModule,
+
+    DemoBootstrapAlertsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

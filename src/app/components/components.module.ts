@@ -7,6 +7,14 @@ import {RadioComponent} from './forms/radio/radio.component';
 import { UploadComponent } from './forms/upload/upload/upload.component';
 
 
+/**
+ * @link https://github.com/valor-software/ngx-bootstrap
+ * @link http://ngx-bootstrap.com/#/getting-started
+ *
+ * @link https://github.com/ng-bootstrap/ng-bootstrap
+ * @link https://ng-bootstrap.github.io/#/getting-started
+ */
+
 @NgModule({
   imports: [
     CommonModule,
