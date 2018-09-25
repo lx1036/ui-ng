@@ -13,6 +13,7 @@ import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/materia
 import {TabsModule} from "../components/layout/tabset/tabs.component";
 import {DemoBootstrapDropdownModule} from "../components/dropdown/dropdown.component";
 import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
+import {DemoBootstrapButtonsModule} from "../components/button/button";
 
 
 
@@ -27,8 +28,8 @@ import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
       
       <!--<demo-tabs></demo-tabs>-->
       <!--<demo-bootstrap-dropdown></demo-bootstrap-dropdown>-->
-      
-      <demo-bootstrap-alerts></demo-bootstrap-alerts>
+      <!--<demo-bootstrap-alerts></demo-bootstrap-alerts>-->
+      <demo-bootstrap-buttons></demo-bootstrap-buttons>
     </div>
   `,
   styles: []
@@ -87,7 +88,8 @@ export class AppRoutingModule {}
     TabsModule,
     DemoBootstrapDropdownModule,
 
-    DemoBootstrapAlertsModule
+    DemoBootstrapAlertsModule,
+    DemoBootstrapButtonsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
