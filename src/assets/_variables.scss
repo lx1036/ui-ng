@@ -1,0 +1,123 @@
+/**
+ * Base
+ */
+// Color
+$white: #fff;
+$black: #000;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+
+
+
+// Font
+$font-weight-normal: 400 !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+
+
+
+
+
+
+// Options
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+
+
+
+
+
+
+
+/**
+ * Advance
+ */
+// Alert
+$alert-padding-y: .75rem !default;
+$alert-padding-x: 1.25rem !default;
+$alert-margin-bottom: 1rem !default;
+$alert-border-width: 1px !default;
+$alert-border-radius: .25rem !default;
+$close-font-size: 1.5rem !default;
+
+
+
+// Border
+$border-width: 1px;
+$border-radius: .25rem;
+
+
+
+// Body
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+
+
+
+
+
+
+
+
+
+// Card
+$card-border-width: $border-width;
+$card-border-color: rgba($black, .125);
+$card-border-radius: $border-radius;
+$card-spacer-y: .75rem !default;
+$card-spacer-x: 1.25rem !default;
+$card-cap-bg: rgba($black, .03) !default;
+$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-bg: $white !default;
+
+
+
+// Components
+$component-active-color:      $white !default;
+$component-active-bg:         theme-color("primary") !default;
+
+
+
+// Dropdown
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+
+$dropdown-min-width:                10rem !default;
+$dropdown-padding-y:                .5rem !default;
+$dropdown-spacer:                   .125rem !default;
+$dropdown-bg:                       $white !default;
+$dropdown-border-color:             rgba($black, .15) !default;
+$dropdown-border-radius:            $border-radius !default;
+$dropdown-border-width:             $border-width !default;
+$dropdown-divider-bg:               $gray-200 !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+$dropdown-link-color:               $gray-900 !default;
+$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
+$dropdown-link-hover-bg:            $gray-100 !default;
+$dropdown-link-active-color:        $component-active-color !default;
+$dropdown-link-active-bg:           $component-active-bg !default;
+$dropdown-link-disabled-color:      $gray-600 !default;
+$dropdown-item-padding-y:           .25rem !default;
+$dropdown-item-padding-x:           1.5rem !default;
+$dropdown-header-color:             $gray-600 !default;
+
+
+
+
+
+
+

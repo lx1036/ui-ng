@@ -5,7 +5,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule, TemplateDirective} from '../../common/share';
+import {ShareModule, TemplateDirective} from '../common/share';
 
 @Component({
   selector: 'ui-tab-nav',

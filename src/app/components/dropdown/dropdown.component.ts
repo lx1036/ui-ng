@@ -1,6 +1,6 @@
 import {Component, Directive, ElementRef, NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {DemoTabs, Tab, TabContent, TabSet, TabTitle} from "../layout/tabset/tabs.component";
+import {DemoTabs, Tab, TabContent, TabSet, TabTitle} from "../tabset/tabs.component";
 
 
 

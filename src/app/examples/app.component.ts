@@ -10,10 +10,11 @@ import {DialogModule} from "./dialog/dialog.component";
 import {A11yModule} from "@angular/cdk/a11y";
 import {CdkTableModule} from "@angular/cdk/table";
 import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
-import {TabsModule} from "../components/layout/tabset/tabs.component";
+import {TabsModule} from "../components/tabset/tabs.component";
 import {DemoBootstrapDropdownModule} from "../components/dropdown/dropdown.component";
 import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
 import {DemoBootstrapButtonsModule} from "../components/button/button";
+import {DemoBootstrapAccordionModule} from "../components/accordion/accordion";
 
 
 
@@ -29,7 +30,8 @@ import {DemoBootstrapButtonsModule} from "../components/button/button";
       <!--<demo-tabs></demo-tabs>-->
       <!--<demo-bootstrap-dropdown></demo-bootstrap-dropdown>-->
       <!--<demo-bootstrap-alerts></demo-bootstrap-alerts>-->
-      <demo-bootstrap-buttons></demo-bootstrap-buttons>
+      <!--<demo-bootstrap-buttons></demo-bootstrap-buttons>-->
+      <demo-bootstrap-accordion></demo-bootstrap-accordion>
     </div>
   `,
   styles: []
@@ -90,6 +92,7 @@ export class AppRoutingModule {}
 
     DemoBootstrapAlertsModule,
     DemoBootstrapButtonsModule,
+    DemoBootstrapAccordionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

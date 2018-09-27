@@ -1,9 +1,5 @@
-@import "../functions";
-@import "../variables";
-@import "../mixins/border-radius";
-@import "../mixins/box-shadow";
-@import "../mixins/hover";
-@import "../mixins/gradients";
+@import "../../../assets/variables";
+@import "../../../assets/mixin";
 
 // The dropdown wrapper (`<div>`)
 .dropup,
