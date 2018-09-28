@@ -15,6 +15,7 @@ import {DemoBootstrapDropdownModule} from "../components/dropdown/dropdown.compo
 import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
 import {DemoBootstrapButtonsModule} from "../components/button/button";
 import {DemoBootstrapAccordionModule} from "../components/accordion/accordion";
+import {DemoBootstrapCarouselModule} from "../components/carousel/carousel";
 
 
 
@@ -31,7 +32,8 @@ import {DemoBootstrapAccordionModule} from "../components/accordion/accordion";
       <!--<demo-bootstrap-dropdown></demo-bootstrap-dropdown>-->
       <!--<demo-bootstrap-alerts></demo-bootstrap-alerts>-->
       <!--<demo-bootstrap-buttons></demo-bootstrap-buttons>-->
-      <demo-bootstrap-accordion></demo-bootstrap-accordion>
+      <!--<demo-bootstrap-accordion></demo-bootstrap-accordion>-->
+      <demo-bootstrap-carousel></demo-bootstrap-carousel>
     </div>
   `,
   styles: []
@@ -93,6 +95,7 @@ export class AppRoutingModule {}
     DemoBootstrapAlertsModule,
     DemoBootstrapButtonsModule,
     DemoBootstrapAccordionModule,
+    DemoBootstrapCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,14 @@ import {
 } from "@angular/core";
 import {CommonModule} from "@angular/common";
 
+
+/**
+ * @link https://mdbootstrap.com/angular/advanced/accordion/
+ * @link http://ngx-bootstrap.com/#/modals
+ *
+ */
+
+
 let nextId = 0;
 
 @Directive({
