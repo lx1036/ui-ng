@@ -16,6 +16,7 @@ import {DemoBootstrapAlertsModule} from "../components/alerts/alerts";
 import {DemoBootstrapButtonsModule} from "../components/button/button";
 import {DemoBootstrapAccordionModule} from "../components/accordion/accordion";
 import {DemoBootstrapCarouselModule} from "../components/carousel/carousel";
+import {DemoModuleLoaderModule} from "../tests/module-loader/module-loader";
 
 
 
@@ -33,7 +34,9 @@ import {DemoBootstrapCarouselModule} from "../components/carousel/carousel";
       <!--<demo-bootstrap-alerts></demo-bootstrap-alerts>-->
       <!--<demo-bootstrap-buttons></demo-bootstrap-buttons>-->
       <!--<demo-bootstrap-accordion></demo-bootstrap-accordion>-->
-      <demo-bootstrap-carousel></demo-bootstrap-carousel>
+      <!--<demo-bootstrap-carousel></demo-bootstrap-carousel>-->
+      
+      <demo-module-loader></demo-module-loader>
     </div>
   `,
   styles: []
@@ -96,6 +99,11 @@ export class AppRoutingModule {}
     DemoBootstrapButtonsModule,
     DemoBootstrapAccordionModule,
     DemoBootstrapCarouselModule,
+
+
+
+    // tests
+    DemoModuleLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
